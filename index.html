@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div>
+            <p class="small-title">LIVE WEATHER</p>
+            <h1>WeatherSphere 🌦️</h1>
+            <p class="subtitle">Smart Weather Dashboard</p>
+        </div>
+
+        <button id="themeBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name...">
+        <button onclick="searchWeather()">Search 🔍</button>
+        <button class="location-btn" onclick="getLocation()">📍 My Location</button>
+    </div>
+
+    <p id="error"></p>
+
+    <!-- Main Weather -->
+    <section class="main-weather">
+
+        <div class="weather-main">
+            <div>
+                <span id="condition">Clear Sky</span>
+                <h2 id="city">New Delhi</h2>
+                <p id="date">Loading...</p>
+            </div>
+
+            <div class="weather-icon" id="weatherIcon">☀️</div>
+
+            <div class="temperature">
+                <span id="temperature">--</span><sup>°C</sup>
+            </div>
+
+            <p>Feels like <b id="feelsLike">--</b>°C</p>
+
+            <div class="stats">
+                <div>
+                    💧
+                    <span>Humidity</span>
+                    <b id="humidity">--%</b>
+                </div>
+
+                <div>
+                    💨
+                    <span>Wind</span>
+                    <b id="wind">-- km/h</b>
+                </div>
+
+                <div>
+                    🎚️
+                    <span>Pressure</span>
+                    <b id="pressure">-- hPa</b>
+                </div>
+            </div>
+        </div>
+
+        <!-- Air Quality -->
+        <div class="card">
+            <h3>Air Quality</h3>
+
+            <div class="aqi">
+                <strong id="aqi">--</strong>
+
+                <div>
+                    <b id="aqiStatus">Moderate</b>
+                    <p>Weather-based estimate</p>
+                </div>
+            </div>
+
+            <div class="progress">
+                <div id="aqiBar"></div>
+            </div>
+
+            <p id="aqiText">Loading...</p>
+        </div>
+
+        <!-- Sun -->
+        <div class="card">
+            <h3>Sun & Sky</h3>
+
+            <div class="sun-grid">
+
+                <div>
+                    🌅
+                    <span>Sunrise</span>
+                    <b id="sunrise">--</b>
+                </div>
+
+                <div>
+                    🌇
+                    <span>Sunset</span>
+                    <b id="sunset">--</b>
+                </div>
+
+                <div>
+                    ☁️
+                    <span>Cloud Cover</span>
+                    <b id="cloud">--%</b>
+                </div>
+
+                <div>
+                    🌞
+                    <span>UV Index</span>
+                    <b id="uv">--</b>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Hourly Forecast -->
+    <section class="card full">
+
+        <div class="section-title">
+            <h3>Today's Weather</h3>
+            <span>Next 8 Hours</span>
+        </div>
+
+        <div class="hourly" id="hourly"></div>
+
+    </section>
+
+    <!-- 5 Day Forecast -->
+    <section class="card full">
+
+        <div class="section-title">
+            <h3>5-Day Forecast</h3>
+            <span>Weather Outlook</span>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+
+    </section>
+
+    <!-- Details -->
+    <section class="details">
+
+        <div class="detail">
+            <span>🌡️ Temperature</span>
+            <b id="dTemp">-- °C</b>
+        </div>
+
+        <div class="detail">
+            <span>🤒 Feels Like</span>
+            <b id="dFeels">-- °C</b>
+        </div>
+
+        <div class="detail">
+            <span>💧 Humidity</span>
+            <b id="dHumidity">--%</b>
+        </div>
+
+        <div class="detail">
+            <span>💨 Wind Direction</span>
+            <b id="dDirection">--</b>
+        </div>
+
+        <div class="detail">
+            <span>🌧️ Precipitation</span>
+            <b id="dRain">-- mm</b>
+        </div>
+
+        <div class="detail">
+            <span>☁️ Cloud Cover</span>
+            <b id="dCloud">--%</b>
+        </div>
+
+    </section>
+
+    <footer>
+        WeatherSphere | B.Tech CSE Mini Project
+        <br>
+        Weather data powered by Open-Meteo
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
